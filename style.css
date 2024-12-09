@@ -272,9 +272,32 @@ body {
 
 
 
-@media screen and (max-width:800px) {
-  .loo {
-    width: 100%;
-    height: 50%;
-  }
+@media screen and (max-width:395px) {
+*{
+  font-size: 10px;
+}
+.navbar{
+  box-shadow: 5px 5px 10px rgpa(0,0,0,0.5);
+}  .sale__image img{
+  padding-top: 5px;
+  width: 100%;
+  height: 130px;
+ 
+}
+.sale__image__offer{
+  display: block;
+  
+}
+.topics__container p {
+  border: 2px rgb(0, 0, 0) solid;
+  padding: 10px;
+  flex-basis: 40%;
+  flex-grow: 3;
+  padding-left: 10px;
+}
+.Cources {
+  width: 35%;
+  margin: 10px;
+
+}
 }
