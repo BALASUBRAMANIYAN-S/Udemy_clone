@@ -98,19 +98,6 @@ body {
 .myLearning:hover .myLearning__popup{
   display:block ;
 }
-
-.catogery button:hover {
-  background-color: #e8e6e9;
-  color: rgb(0, 0, 0);
-  padding-left: 10px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-right: 10px;
-  border-radius: 30px;
-  border: 1px darkblue solid;
-  transition-duration: 1ms;
-}
-
 .sale__image {
   width: 100%;
   position: relative;
