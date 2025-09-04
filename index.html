@@ -7,7 +7,7 @@
     <title>Udemy</title>
     <!--link style.css-->
     <link rel="stylesheet" href="style.css">
-    <!--link for fount-->
+    <!--link for font-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&family=Young+Serif&display=swap"
@@ -15,6 +15,245 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: 'Gabarito', 'Young Serif', Arial, sans-serif;
+            background: #f7f8fa;
+            margin: 0;
+            color: #222;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #fff;
+            padding: 16px 32px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .navbar__s1__title {
+            color: #a435f0;
+            font-size: 2rem;
+            margin: 0;
+            font-family: 'Young Serif', serif;
+        }
+        .navbar__s2 {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex: 1;
+            max-width: 400px;
+            margin: 0 24px;
+        }
+        .navbar__s2 input {
+            width: 100%;
+            padding: 8px 12px;
+            border-radius: 20px;
+            border: 1px solid #ddd;
+            font-size: 1rem;
+        }
+        .navbar__s3 {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .navbar__s3 p, .navbar__s3 i {
+            margin: 0;
+            cursor: pointer;
+        }
+        .myLearning {
+            position: relative;
+        }
+        .myLearning__popup {
+            display: none;
+            position: absolute;
+            top: 30px;
+            left: 0;
+            background: #fff;
+            border: 1px solid #ddd;
+            padding: 10px 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            min-width: 180px;
+            z-index: 10;
+        }
+        .myLearning:hover .myLearning__popup {
+            display: block;
+        }
+        .mobile_menu {
+            display: none;
+        }
+        .catogery {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            padding: 24px 0;
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+        .catogery button {
+            background: #a435f0;
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            padding: 8px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .catogery button:hover {
+            background: #7c28b6;
+        }
+        .sale__image {
+            position: relative;
+            max-width: 900px;
+            margin: 32px auto;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 24px rgba(164,53,240,0.08);
+        }
+        .sale__image img {
+            width: 100%;
+            display: block;
+            height: 260px;
+            object-fit: cover;
+        }
+        .sale__image__offer {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            background: rgba(255,255,255,0.95);
+            padding: 24px 32px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(164,53,240,0.08);
+        }
+        .sale__image__offer h2 {
+            margin: 0 0 8px 0;
+            color: #a435f0;
+        }
+        .recommeneded, .final__topics, .topics {
+            max-width: 1200px;
+            margin: 40px auto;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+            padding: 32px;
+        }
+        .recommeneded__continer, .final__topics__s1 {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+        }
+        .Cources {
+            background: #f7f8fa;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(164,53,240,0.04);
+            padding: 16px;
+            width: 220px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+        .Cources:hover {
+            transform: translateY(-4px) scale(1.03);
+            box-shadow: 0 6px 24px rgba(164,53,240,0.12);
+        }
+        .Cources img.loo {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 8px;
+        }
+        .Cources h3 {
+            margin: 4px 0 8px 0;
+            color: #a435f0;
+            font-size: 1.1rem;
+        }
+        .Cources p {
+            margin: 2px 0;
+            font-size: 0.95rem;
+        }
+        .Cources del {
+            color: #888;
+        }
+        .topics__container {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 16px;
+        }
+        .topics__container p {
+            background: #e6e1f7;
+            color: #a435f0;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-weight: 500;
+            margin: 0;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .topics__container p:hover {
+            background: #a435f0;
+            color: #fff;
+        }
+        .topics__title {
+            color: #a435f0;
+            margin-bottom: 12px;
+        }
+        .final__topics h1 {
+            color: #a435f0;
+        }
+        .final__topics__s1 {
+            margin-top: 24px;
+        }
+        @media (max-width: 900px) {
+            .recommeneded__continer, .final__topics__s1 {
+                flex-wrap: wrap;
+                gap: 16px;
+                justify-content: center;
+            }
+            .Cources {
+                width: 45vw;
+                min-width: 180px;
+            }
+            .sale__image img {
+                height: 180px;
+            }
+        }
+        @media (max-width: 600px) {
+            .navbar {
+                flex-direction: column;
+                padding: 12px 8px;
+            }
+            .navbar__s2 {
+                max-width: 100%;
+                margin: 12px 0;
+            }
+            .catogery {
+                flex-wrap: wrap;
+                gap: 8px;
+                padding: 16px 0;
+            }
+            .sale__image__offer {
+                position: static;
+                margin: 12px 0;
+                padding: 16px;
+            }
+            .recommeneded, .final__topics, .topics {
+                padding: 16px;
+            }
+            .Cources {
+                width: 90vw;
+                min-width: 140px;
+            }
+            .mobile_menu {
+                display: block;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -22,78 +261,64 @@
         <div class="navbar__s1">
             <h1 class="navbar__s1__title">Udemy</h1>
         </div>
-
         <div class="navbar__s2">
-
             <i class="fa-solid fa-magnifying-glass" style="color: #000000;"></i>
-
             <input placeholder="Search for anything here. Tech,Business,Art...">
-
         </div>
-
         <div class="navbar__s3">
-
             <p>Cources</p>
-            <!-- <p>My Learning</p> -->
             <div class="myLearning">
                 <p> My Learning</p>
-
                 <div class="myLearning__popup">
                     <p>
-                        you did not purchase anything Yet
+                        You did not purchase anything yet
                     </p>
-
                 </div>
             </div>
             <i class="fa-solid fa-cart-shopping" style="color: #000000;"></i>
             <i class="fa-solid fa-bell" style="color: #000000;"></i>
             <i class="fa-solid fa-user" style="color: #000000;"></i>
-
         </div>
         <div class="mobile_menu">
             <i class="fa-solid fa-bars" style="color: #000000;"></i>
         </div>
-
     </div>
     <div class="catogery">
-
-        <button>Devolopoment</button>
+        <button>Development</button>
         <button>Business</button>
         <button>IT & Software</button>
-        <button>Personal Devolopoment</button>
+        <button>Personal Development</button>
         <button>Design</button>
         <button>Marketing</button>
     </div>
     <div class="sale__image">
         <img src="10.jpg" alt="Reload">
-
         <div class="sale__image__offer">
             <h2>
                 Udemy flash sale! 24 hours to save
             </h2>
             <p>
-                Get the courses for just 499 only
+                Get the courses for just ₹499 only
             </p>
-
         </div>
     </div>
     <div class="recommeneded">
-        <h2>Recommeneded for you</h2><br>
+        <h2 style="color:#a435f0;">Recommended for you</h2><br>
         <p>Pick the best one</p>
         <div class="recommeneded__continer">
             <div class="Cources">
                 <img class="loo" src="1.jpg" alt="">
                 <p>2023 Python Data</p>
-                <h3>Visuallsation Masterclass</h3>
-                <p>Col steele</p>
+                <h3>Visualization Masterclass</h3>
+                <p>Col Steele</p>
                 <p>4.9 ⭐⭐⭐⭐</p>
                 <p>₹449 <del>₹1049</del> </p>
             </div>
             <div class="Cources">
                 <img class="loo" src="2.jpg" alt="">
                 <p>Web Development</p>
-                <h3> Bootcamp 2023</h3>
-                <p>Col steele</p>
+                <h3>Bootcamp 2023</h3>
+                <p>Col Steele</p>
                 <p>3.2 ⭐⭐</p>
                 <p>₹449 <del>₹999</del> </p>
             </div>
@@ -101,20 +326,18 @@
                 <img class="loo" src="3.jpg" alt="">
                 <p>Master UI/UX </p>
                 <h3>Figma</h3>
-                <p>Col steele</p>
+                <p>Col Steele</p>
                 <p>4.8 ⭐⭐⭐</p>
                 <p>₹449 <del>₹1999</del> </p>
             </div>
             <div class="Cources">
                 <img class="loo" src="4.jpg" alt="">
-                <p>Sasic to Advance Java Core </p>
+                <p>Basic to Advance Java Core </p>
                 <h3>Java</h3>
-                <p>Col steele</p>
+                <p>Col Steele</p>
                 <p>4.8 ⭐⭐⭐⭐</p>
                 <p>₹449 <del>₹999</del> </p>
             </div>
-
-
         </div>
     </div>
     <div class="topics">
@@ -123,32 +346,31 @@
             <p>Website</p>
             <p>JavaScript</p>
             <p>CSS</p>
-            <p>Mongo DB</p>
+            <p>MongoDB</p>
             <p>Azure</p>
             <p>Docker</p>
-            <p>GitHuB</p>
+            <p>GitHub</p>
             <p>React JS</p>
-            <p class="p_aws">Aws</p>
-
+            <p class="p_aws">AWS</p>
         </div>
     </div>
     <div class="final__topics">
-        <h1>Most poular</h1>
+        <h1>Most popular</h1>
         <p>Pick the best fit</p>
         <div class="final__topics__s1">
             <div class="Cources">
                 <img class="loo" src="9.jpg" alt="">
                 <p>2023 Python Data</p>
-                <h3>Visuallsation Masterclass</h3>
-                <p>Col steele</p>
+                <h3>Visualization Masterclass</h3>
+                <p>Col Steele</p>
                 <p>4.9 ⭐</p>
                 <p>₹449 <del>₹1049</del> </p>
             </div>
             <div class="Cources">
                 <img class="loo" src="8.jpg" alt="">
                 <p>SQL Web Design</p>
-                <h3> Bootcamp 2023</h3>
-                <p>Col steele</p>
+                <h3>Bootcamp 2023</h3>
+                <p>Col Steele</p>
                 <p>3.2 ⭐⭐⭐⭐⭐</p>
                 <p>₹449 <del>₹999</del> </p>
             </div>
@@ -156,15 +378,15 @@
                 <img class="loo" src="7.jpg" alt="">
                 <p>Master UI/UX </p>
                 <h3>Figma</h3>
-                <p>Col steele</p>
+                <p>Col Steele</p>
                 <p>4.8 ⭐⭐⭐⭐</p>
                 <p>₹449 <del>₹1999</del> </p>
             </div>
             <div class="Cources">
                 <img class="loo" src="6.jpg" alt="">
-                <p>Advance Java&JavaScript </p>
+                <p>Advance Java & JavaScript </p>
                 <h3>Java</h3>
-                <p>Col steele</p>
+                <p>Col Steele</p>
                 <p>4.8 ⭐⭐</p>
                 <p>₹449 <del>₹999</del> </p>
             </div>
@@ -172,17 +394,17 @@
         <div class="final__topics__s1">
             <div class="Cources">
                 <img class="loo" src="5.jpg" alt="">
-                <p>2023 Data structure</p>
+                <p>2023 Data Structure</p>
                 <h3>Routing Masterclass</h3>
-                <p>Col steele</p>
+                <p>Col Steele</p>
                 <p>4.9 ⭐⭐</p>
                 <p>₹449 <del>₹1049</del> </p>
             </div>
             <div class="Cources">
                 <img class="loo" src="4.jpg" alt="">
                 <p>Web Development</p>
-                <h3> Bootcamp 2023</h3>
-                <p>Col steele</p>
+                <h3>Bootcamp 2023</h3>
+                <p>Col Steele</p>
                 <p>3.2 ⭐⭐⭐</p>
                 <p>₹449 <del>₹999</del> </p>
             </div>
@@ -190,7 +412,7 @@
                 <img class="loo" src="2.jpg" alt="">
                 <p>UI/UX </p>
                 <h3>3D Animation</h3>
-                <p>Col steele</p>
+                <p>Col Steele</p>
                 <p>4.8 ⭐⭐⭐⭐</p>
                 <p>₹449 <del>₹1999</del> </p>
             </div>
@@ -198,17 +420,12 @@
                 <img class="loo" src="1.jpg" alt="">
                 <p>Advance Core in Java</p>
                 <h3>Java</h3>
-                <p>Col steele</p>
+                <p>Col Steele</p>
                 <p>4.8 ⭐⭐⭐⭐⭐</p>
                 <p>₹449 <del>₹999</del> </p>
             </div>
         </div>
     </div>
-    <!--FOOTER**************************-->
-
-    </div>
-
-
 </body>
 
-</html>
+</html></div>
